@@ -1,0 +1,98 @@
+{% extends 'content/base.html' %}
+{% load static %}
+
+{% block title %}{{ blog_post.seo_title }}{% endblock %}
+{% if blog_post.meta_description %}
+  {% block description %}{{ blog_post.meta_description }}{% endblock %}
+{% endif %}
+{% if blog_post.featured_image %}
+  {% block seo_featured_image %}{{ blog_post.featured_image }}{% endblock seo_featured_image %}
+{% endif %}
+
+{% block navigation_menu %}
+
+  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+    <div class="ms-auto">
+      <ul id="nav" class="navbar-nav ms-auto">
+        {% for menu_item in navigation_menu.menu_items %}
+          <li class="nav-item">
+            <a class="{% if menu_item.label == 'Products' %}active{% endif %}"
+               href="/{{ menu_item.url }}">{{ menu_item.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block main %}
+  {% if not no_token %}
+    {% if blog_post %}
+      <!-- ========================= blog-section start ========================= -->
+
+      <section id="blog-header" class="single-post-nav">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="section-title text-center">
+                <h2>{{ blog_post.title }}</h2>
+                <ul class="breadcrumb-nav">
+                  <li><a href="{% url 'content:home' %}">Home</a></li>
+                  <li><a href="{% url 'content:blog' %}">Products</a></li>
+                  <li>{{ blog_post.title }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Blog Post -->
+      <section class="blog-post">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 col-12">
+              <div class="single-post">
+                <div class="single-post-meta">
+                  <h2 class="single-post-header">{{ blog_post.title }}</h2>
+                  <ul class="single-post-meta-info">
+                    <li>
+                      <a href="javascript:void(0)"><img src="
+                        {% if blog_post.author.profile_image %}{{ blog_post.author.profile_image }}{% else %}{% static 'images/team/team-1.png' %}{% endif %}"
+                                                        alt="#">{{ blog_post.author.first_name }} {{ blog_post.author.last_name }}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)"><i class="lni lni-calendar"></i> {{ blog_post.published }}
+                      </a>
+                    </li>
+                    {% for tag in blog_post.tags %}
+                      <li>
+                        <a href="{% url 'content:blog_tags' tag.slug %}"><i class="lni lni-tag"></i>{{ tag.name }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% if blog_post.featured_image %}
+                  <div class="single-post-thumbnail">
+                    <img src="{{ blog_post.featured_image }}" alt="{{ blog_post.featured_image_alt }}">
+                  </div>
+                {% endif %}
+                <div class="single-post-body">
+                  {{ blog_post.body|safe }}
+                </div>
+              </div>
+            </div>
+            <!-- Searchbox -->
+            {% include "content/partials/product-search-and-categories.html" %}
+          </div>
+        </div>
+      </section>
+      <!-- ========================= blog-section end ========================= -->
+    {% endif %}
+  {% endif %}
+  <!-- ========================= Body components end ========================= -->
+{% endblock %}
+
+{% block js_extra %}
+{% endblock js_extra %}

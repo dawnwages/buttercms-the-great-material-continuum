@@ -85,13 +85,13 @@ class ButterCMSPageView(TemplateView):
         # If "data" is not in the payload, the page was not fetched successfully
         if blog_posts_data is None:
             raise Http404
-        else: 
+        else:
             for post in blog_posts_data:
                 post['published'] = dateparse.parse_datetime(post['published'])
 
         return blog_posts_data
 
-    def search_blog_posts(self, query):
+    def search_blog_posts(self, query, preview=None):
         """
         Return a list of blog posts from ButterCMS that match the search query.
 
@@ -127,7 +127,7 @@ class ButterCMSPageView(TemplateView):
 
 
 class ButterCMSBlogView(ButterCMSPageView):
-    template_name = "content/blog.html"
+    template_name = "content/products.html"
 
     @xframe_options_exempt
     def get(self, request, *args, **kwargs):
@@ -152,7 +152,7 @@ class ButterCMSBlogView(ButterCMSPageView):
 
 
 class ButterCMSBlogSearchView(ButterCMSPageView):
-    template_name = "content/blog.html"
+    template_name = "content/products.html"
 
     @xframe_options_exempt
     def get(self, request, *args, **kwargs):
@@ -173,7 +173,7 @@ class ButterCMSBlogSearchView(ButterCMSPageView):
 
 
 class ButterCMSBlogPostView(ButterCMSBlogView):
-    template_name = "content/blog-post.html"
+    template_name = "content/product-post.html"
 
     @xframe_options_exempt
     def get(self, request, slug, *args, **kwargs):

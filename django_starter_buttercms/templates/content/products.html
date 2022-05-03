@@ -4,9 +4,6 @@
 {% block title %}Sample Blog with Components - powered by ButterCMS{% endblock %}
 {% block description %}Sample Landing Page with Components - powered by ButterCMS{% endblock %}
 
-{% block css_extra %}
-{% endblock css_extra %}
-
 {% block navigation_menu %}
 
 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
@@ -14,7 +11,7 @@
         <ul id="nav" class="navbar-nav ms-auto">
             {% for menu_item in navigation_menu.menu_items %}
             <li class="nav-item">
-                <a class="{% if menu_item.label == 'Blog' %}active{% endif %}" href="/{{ menu_item.url }}">{{ menu_item.label }}</a>
+                <a class="{% if menu_item.label == 'Products' %}active{% endif %}" href="/{{ menu_item.url }}">{{ menu_item.label }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -34,7 +31,7 @@
                     {% if category_slug %}
                     <!-- Breadcrumb nav for categories view -->
                     <div class="section-title text-center">
-                        <h2>Blog Posts by Category</h2>
+                        <h2>Product Posts by Category</h2>
                         <ul class="breadcrumb-nav">
                             <li><a href="{% url 'content:home' %}">Home</a></li>
                             <li><a href="{% url 'content:blog' %}">Blog</a></li>
@@ -45,7 +42,7 @@
                     {% elif tag_slug %}
                     <!-- Breadcrumb nav for posts by tag view -->
                     <div class="section-title text-center">
-                        <h2>Blog Posts by Tag</h2>
+                        <h2>Product Posts by Tag</h2>
                         <ul class="breadcrumb-nav">
                             <li><a href="{% url 'content:home' %}">Home</a></li>
                             <li><a href="{% url 'content:blog' %}">Blog</a></li>
@@ -59,18 +56,18 @@
                         <h2>Search Results</h2>
                         <ul class="breadcrumb-nav">
                             <li><a href="{% url 'content:home' %}">Home</a></li>
-                            <li><a href="{% url 'content:blog' %}">Blog</a></li>
+                            <li><a href="{% url 'content:blog' %}">Products</a></li>
                             <li>Seach: "{{search_query}}"</li>
                         </ul>
                     </div>
                     <!-- End Nav -->
                     {% else %}
-                    <!-- Breadcrumb nav for main blog.html view -->
+                    <!-- Breadcrumb nav for main products.html view -->
                     <div class="section-title text-center">
-                        <h2>All Blog Posts</h2>
+                        <h2>All Product Posts</h2>
                         <ul class="breadcrumb-nav">
                             <li><a href="{% url 'content:home' %}">Home</a></li>
-                            <li>All blog posts</li>
+                            <li>All product posts</li>
                         </ul>
                     </div>
                     <!-- End Nav -->
@@ -120,12 +117,12 @@
                             </div>
                         </div>
                         {% empty %}
-                          <div>No blog posts found.</div>
+                          <div>No product posts found.</div>
                         {% endfor %}
                     </div>
                 </div>
                 <!-- Widgets Column -->
-               {% include "content/partials/blog-search-and-categories.html" %}
+               {% include "content/partials/product-search-and-categories.html" %}
             </div>
         </div>
     </section>

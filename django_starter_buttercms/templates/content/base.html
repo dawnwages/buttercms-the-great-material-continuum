@@ -18,6 +18,9 @@
     {% endblock css_all %}
     {% block css_extra %}
       <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     {% endblock css_extra %}
     </head>
   <body>
@@ -52,12 +55,11 @@
     <!-- ========================= header start ========================= -->
     <header class="header">
       <div class="navbar-area">
-        <div class="container">
-          <div class="row align-items-center">
             <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="https://buttercms.com">
-                  <img src="https://cdn.buttercms.com/PBral0NQGmmFzV0uG7Q6" alt="Logo" />
+              <nav class="navbar navbar-expand-lg z-front">
+              <span class="xl-font navbar-brand main-font"> The Great Material Continuum </span>
+                <a class="sm-font navbar-brand" href="https://buttercms.com">
+                  <span class="built-with">Built with</span> <img src="https://cdn.buttercms.com/PBral0NQGmmFzV0uG7Q6" alt="Logo" /><span class="built-with">+</span> <img src="https://static.djangoproject.com/img/logo-django.42234b631760.svg" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="toggler-icon"></span>
@@ -85,6 +87,14 @@
               </nav>
               <!-- navbar -->
             </div>
+        <div class="box">
+        </div>
+        <div class="box" style="--r:40px;--l:5px;--w:70%;--c:#336645">
+        </div>
+        <div class="box" style="--r:100px;--l:2px;--w:100px;--c:rgb(5,26,96)">
+        </div>
+        <div class="container">
+          <div class="row align-items-center">
           </div>
           <!-- row -->
         </div>
