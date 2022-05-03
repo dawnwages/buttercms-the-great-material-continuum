@@ -1,11 +1,13 @@
-{% extends "base.html" %}
+{% extends "content/base.html" %}
 
 {% block title %}Server Error{% endblock %}
 
-{% block content %}
-<h1>Ooops!!! 500</h1>
-
-<h3>Looks like something went wrong!</h3>
-
-<p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.</p>
-{% endblock content %}
+{% block main %}
+  <section id="server-error" class="error-section">
+  <div class="container">
+    <h1>Ooops!!! 500</h1>
+    <h3>Looks like something went wrong!</h3>
+    <p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.</p>
+  </div>
+  </section>
+{% endblock main %}

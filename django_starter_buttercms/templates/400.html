@@ -1,0 +1,12 @@
+{% extends "content/base.html" %}
+
+{% block title %}Forbidden (400){% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Forbidden (400)</h1>
+  <h3>Looks like something went wrong!</h3>
+  <p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.</p>
+  <p>{% if exception %}{{ exception }}{% else %}You're not allowed to access this page.{% endif %}</p>
+</div>
+{% endblock content %}

@@ -1,9 +1,15 @@
-{% extends "base.html" %}
+{% extends "content/base.html" %}
 
 {% block title %}Forbidden (403){% endblock %}
 
+{% block main %}
+  <section id="server-error" class="error-section">
+  <div class="container">
+    <h1>Forbidden (403)</h1>
+    <p>{% if exception %}{{ exception }}{% else %}You're not allowed to access this page.{% endif %}</p>
+  </div>
+  </section>
+{% endblock main %}
 {% block content %}
-<h1>Forbidden (403)</h1>
 
-<p>{% if exception %}{{ exception }}{% else %}You're not allowed to access this page.{% endif %}</p>
 {% endblock content %}
