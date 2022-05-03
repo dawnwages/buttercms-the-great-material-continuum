@@ -884,9 +884,9 @@ p {
   display: flex;
   align-items: center;
   background: var(--light-green-5);
-  background: linear-gradient(var(--transparent-line-color-1) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--transparent-line-color-1) 1.5px, transparent 1.5px), linear-gradient(var(--transparent-line-color-2) 1px, transparent 1px), linear-gradient(var(--transparent-line-color-2), #a9a9a973 1px, transparent 1px);
-  background-position: -1.5px -1.5px, -1.5px -1.5px, -1px -1px, -1px -1px;
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-image: linear-gradient(var(--transparent-line-color-1) 2px, transparent 2px), linear-gradient(90deg, var(--transparent-line-color-1) 2px, transparent 2px), linear-gradient(rgba(150, 150, 150, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, .3) 1px, transparent 1px);
+	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   z-index: 1;
 }
 
@@ -1285,9 +1285,9 @@ p {
 
 .single-post-nav, .blog-roll-nav {
   align-items: center;
-  background: linear-gradient(var(--transparent-line-color-1) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--transparent-line-color-1) 1.5px, transparent 1.5px), linear-gradient(var(--transparent-line-color-2) 1px, transparent 1px), linear-gradient(var(--transparent-line-color-2), #a9a9a973 1px, transparent 1px);
-  background-position: -1.5px -1.5px, -1.5px -1.5px, -1px -1px, -1px -1px;
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-image: linear-gradient(var(--transparent-line-color-1) 2px, transparent 2px), linear-gradient(90deg, var(--transparent-line-color-1) 2px, transparent 2px), linear-gradient(rgba(150, 150, 150, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, .3) 1px, transparent 1px);
+	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   display: flex;
   height: 400px;
   overflow: hidden;
