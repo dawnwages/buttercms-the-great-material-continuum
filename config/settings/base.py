@@ -240,5 +240,7 @@ LOGGING = {
 # ------------------------------------------------------------------------------
 BUTTERCMS_API_TOKEN = env("BUTTERCMS_API_TOKEN", default=None)
 
+BUTTERCMS_ADMIN = "https://buttercms.com/pages/"
+
 # Your stuff...
 # ------------------------------------------------------------------------------
